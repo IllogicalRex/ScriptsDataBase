@@ -34,7 +34,7 @@ BEGIN
 		[ComentarioAdmRes]=@ComentarioAdmRes,
 		[Idasesor]=@Idasesor,
 		[idadmin]=@idadmin
-			Where [Idasesor]=@Idasesor and [url]=@url
+			Where ([Idasesor]=@Idasesor OR [idadmin]=@idadmin) and [url]=@url
 	SET NOCOUNT OFF;
 END
 GO

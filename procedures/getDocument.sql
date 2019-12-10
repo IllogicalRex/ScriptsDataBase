@@ -16,14 +16,15 @@ alter proc getDocumentoAlumnoAsesor(@AsesorId varchar(20),@repor1 int,@repor2 in
 
 go
 --Mostrar los documentos del encargado en las fases 2,6,7
-alter proc getDocumentoEncargado(@EncargadoId varchar(20),@tipoAnte int,@tipoSegui int ,@tipoReport int)
+alter proc getDocumentoEncargado(@EncargadoId varchar(20),@tipoAcept int,@tipoAnte int,@tipoSegui int ,@tipoReport int)
 	AS 
 		BEGIN
-			Select * FROM Documento WHERE @EncargadoId=idadmin AND (@tipoAnte=Idtipo OR @tipoSegui=Idtipo OR @tipoReport=Idtipo)
+			Select * FROM Documento WHERE @EncargadoId=idadmin AND (@tipoAcept=Idtipo OR @tipoAnte=Idtipo OR @tipoSegui=Idtipo OR @tipoReport=Idtipo)
 		END
 
 go
 
 --exec getDocumentoAlumnoAsesor '12345678' , 3,4,5,7
+--exec getDocumentoEncargado '15327486' , 1,2,6,7
 
-
+SELECT * FROM AdminUsuario
